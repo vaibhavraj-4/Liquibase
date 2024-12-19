@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS Diagram Generator</title>
+  </head>
+  <body>
+    <h1>AWS Diagram Generator</h1>
+    <form id="promptForm">
+      <label for="prompt">Enter your prompt:</label>
+      <input type="text" id="prompt" name="prompt" required />
+      <button type="submit">Generate</button>
+    </form>
+    <pre id="codeOutput"></pre>
+    <img id="diagram" alt="Generated Diagram" style="display: none" />
+
+    <script>
+      document
+        .getElementById("promptForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const prompt = document.getElementById("prompt").value;
+          fetch("/generate", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ prompt: prompt }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              document.getElementById("codeOutput").textContent = data.code;
+              fetch("/get_diagram")
+                .then((response) => response.blob())
+                .then((imageBlob) => {
+                  const imageElement = document.getElementById("diagram");
+                  imageElement.src = URL.createObjectURL(imageBlob);
+                  imageElement.style.display = "block";
+                });
+            });
+        });
+    </script>
+  </body>
+</html>

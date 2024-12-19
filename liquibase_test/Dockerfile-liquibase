@@ -1,0 +1,12 @@
+# Use an official Liquibase image as a parent image
+FROM liquibase/liquibase
+
+# Copy the Liquibase properties and changelog files into the container
+COPY liquibase.properties /liquibase/liquibase.properties
+COPY db.changelog.xml /liquibase/db.changelog.xml
+
+# Set the working directory to Liquibase
+WORKDIR /liquibase
+
+# Define the entrypoint for Liquibase commands
+ENTRYPOINT ["liquibase"]

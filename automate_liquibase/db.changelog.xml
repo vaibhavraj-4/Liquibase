@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Changeset to create a new table -->
+    <changeSet id="1" author="vaibhav">
+        <createTable tableName="customers">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="first_name" type="VARCHAR(255)" />
+            <column name="last_name" type="VARCHAR(255)" />
+            <column name="email" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+
+    <!-- Changeset to insert initial data -->
+    <changeSet id="2" author="vaibhav">
+        <insert tableName="customers">
+            <column name="id" valueNumeric="1" />
+            <column name="first_name" value="John" />
+            <column name="last_name" value="Doe" />
+            <column name="email" value="john.doe@example.com" />
+        </insert>
+
+        <insert tableName="customers">
+            <column name="id" valueNumeric="2" />
+            <column name="first_name" value="Jane" />
+            <column name="last_name" value="Doe" />
+            <column name="email" value="jane.doe@example.com" />
+        </insert>
+
+    </changeSet>
+    <changeSet id="3" author="vaibhav">
+    <!-- New Changes  -->
+        <insert tableName="customers">
+            <column name="id" valueNumeric="3" />
+            <column name="first_name" value="Raga" />
+            <column name="last_name" value="Kim" />
+            <column name="email" value="raga.kim@opstree.com" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>

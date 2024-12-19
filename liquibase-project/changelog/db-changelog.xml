@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+
+    <!-- Insert Data into Customers Table -->
+    <changeSet id="4" author="vaibhav">
+        <insert tableName="customers">
+            <column name="id" value="4"/>
+            <column name="first_name" value="King"/>
+            <column name="last_name" value="Charkie"/>
+            <column name="email" value="King@opstree.com"/>
+            <column name="created_at" valueDate="2024-01-01 10:00:00"/>
+        </insert>
+        <insert tableName="customers">
+            <column name="id" value="5"/>
+            <column name="first_name" value="Queen"/>
+            <column name="last_name" value="charlie"/>
+            <column name="email" value="charlie@opstree.com"/>
+            <column name="created_at" valueDate="2024-01-02 11:00:00"/>
+        </insert>
+    </changeSet>
+ 
+    <!-- Insert Data into Products Table -->
+    <changeSet id="5" author="vaibhav">
+        <insert tableName="products">
+            <column name="id" value="4"/>
+            <column name="name" value="Product A"/>
+            <column name="price" value="29.99"/>
+            <column name="stock" value="100"/>
+        </insert>
+        <insert tableName="products">
+            <column name="id" value="5"/>
+            <column name="name" value="Product B"/>
+            <column name="price" value="49.99"/>
+            <column name="stock" value="200"/>
+        </insert>
+    </changeSet>
+
+    <!-- Insert Data into Orders Table -->
+    <changeSet id="6" author="vaibhav">
+        <insert tableName="orders">
+            <column name="id" value="4"/>
+            <column name="customer_id" value="1"/>
+            <column name="product_id" value="1"/>
+            <column name="quantity" value="2"/>
+            <column name="order_date" valueDate="2024-01-10 14:00:00"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="id" value="5"/>
+            <column name="customer_id" value="2"/>
+            <column name="product_id" value="2"/>
+            <column name="quantity" value="1"/>
+            <column name="order_date" valueDate="2024-01-11 15:00:00"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

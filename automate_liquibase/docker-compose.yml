@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: Password
+      MYSQL_DATABASE: liquibase01
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  liquibase:
+    build: .
+    depends_on:
+      - mysql
+    environment:
+      LIQUIBASE_DB_HOST: mysql
+    volumes:
+      - .db.changelog.xml /automate_liquibase/db.changelog.xml
+      - .liquibase.properties /automate_liquibase/liquibase.properties
+    entrypoint:
+      ["liquibase", "--defaultsFile=/liquibase/liquibase.properties", "update"]
+
+volumes:
+  mysql_data:

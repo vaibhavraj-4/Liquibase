@@ -1,0 +1,49 @@
+{ "databaseChangeLog": [
+  {
+    "changeSet": {
+      "id": "1726653288280-1",
+      "author": "vaibh (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true
+                  },
+                  "name": "id",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false
+                  },
+                  "name": "name",
+                  "type": "VARCHAR(255)"
+                }
+              },
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false
+                  },
+                  "name": "age",
+                  "type": "INT"
+                }
+              }
+            ]
+            ,
+            "tableName": "my_table"
+          }
+        }
+      ]
+      
+    }
+  }
+  
+]}

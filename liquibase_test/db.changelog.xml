@@ -1,0 +1,34 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!-- Existing changesets -->
+
+    <changeSet author="vaibhav" id="1726652500871-2">
+        <insert tableName="my_table">
+            <column name="name" value="Laila"/>
+            <column name="age" value="40"/>
+        </insert>
+        <insert tableName="my_table">
+            <column name="name" value="Majnu"/>
+            <column name="age" value="29"/>
+        </insert>
+        <insert tableName="my_table">
+            <column name="name" value="champu"/>
+            <column name="age" value="21"/>
+        </insert>
+        <insert tableName="my_table">
+            <column name="name" value="kidmada"/>
+            <column name="age" value="31"/>
+        </insert>
+    </changeSet>
+    <changeSet author="vaibhav" id="1726652500871-3">
+        
+        <insert tableName="my_table">
+            <column name="name" value="champu"/>
+            <column name="age" value="21"/>
+        </insert>
+        <insert tableName="my_table">
+            <column name="name" value="kidmada"/>
+            <column name="age" value="31"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
